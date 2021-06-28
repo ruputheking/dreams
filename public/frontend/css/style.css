@@ -1,0 +1,223 @@
+*, ::after, ::before {
+    box-sizing: inherit
+}
+
+html {
+    font-size: 62.5%;
+    font-size-adjust: 100%;
+    font-weight: 400;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: Poppins, sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: #666
+}
+
+.page-wrapper {
+    position: relative;
+    transition: margin .4s, opacity .5s;
+    opacity: 0
+}
+
+.loaded>.page-wrapper {
+    opacity: 1
+}
+
+.section {
+    padding: 7rem 0
+}
+
+.grey-section {
+    background: #f6f7f9
+}
+
+.welcome-msg {
+    margin: 0;
+    padding: 7px 0;
+    font-size: 13px;
+    font-weight: inherit;
+    font-family: inherit;
+    letter-spacing: inherit;
+    line-height: 2.5rem;
+    white-space: nowrap
+}
+
+.dropdown {
+    position: relative
+}
+
+.dropdown:hover .dropdown-box, .dropdown.show .dropdown-box {
+    visibility: visible;
+    opacity: 1;
+    top: 100%
+}
+
+.dropdown:hover::after, .dropdown.show::after {
+    visibility: visible;
+    opacity: 1;
+    top: calc(100% - 20px);
+    transform: translate3d(-50%, 0, 0)
+}
+
+.dropdown:hover .dropdown-box, .dropdown.show .dropdown-box {
+    transform: translate3d(0, 0, 0)
+}
+
+.dropdown:hover>a, .dropdown.show>a {
+    color: #f6a800
+}
+
+.dropdown::after {
+    content: '';
+    position: absolute;
+    z-index: 1000;
+    left: 50%;
+    top: -9999px;
+    transform: translate3d(-50%, -8px, 0);
+    border: 11px solid transparent;
+    border-bottom: 11px solid #fff;
+    transition: opacity .2s ease-out, transform .2s ease-out;
+    visibility: hidden;
+    opacity: 0;
+    cursor: pointer
+}
+
+.dropdown a {
+    display: flex;
+    align-items: center
+}
+
+.dropdown a .dropdown-image {
+    max-width: 1.4rem;
+    margin-right: .7rem;
+    height: auto
+}
+
+.dropdown>a {
+    line-height: 1.1;
+    padding: 9px 0
+}
+
+.dropdown>a::after {
+    display: inline-block;
+    margin-left: 6px;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 600;
+    font-size: 8px;
+    line-height: 1;
+    content: '\f078'
+}
+
+.dropdown li.active>a, .dropdown li:hover>a {
+    color: #f6a800
+}
+
+.dropdown.dir-up::after {
+    border-bottom-color: transparent;
+    border-top: 11px solid #fff;
+    transform: translate3d(-50%, 8px, 0)
+}
+
+.dropdown.dir-up:hover .dropdown-box, .dropdown.dir-up.show .dropdown-box {
+    top: auto;
+    bottom: 100%
+}
+
+.dropdown.dir-up:hover::after, .dropdown.dir-up.show::after {
+    top: auto;
+    bottom: calc(100% - 20px);
+    transform: translate3d(-50%, 0, 0)
+}
+
+.dropdown-box {
+    position: absolute;
+    right: 0;
+    top: -9999px;
+    margin: 0;
+    padding: .5rem 0;
+    color: #666;
+    background-color: #fff;
+    box-shadow: 0 2px 35px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: transform .2s ease-out, opacity .2s, visibility .2s;
+    transform: translate3d(0, -10px, 0)
+}
+
+.dropdown-box a {
+    padding: .6rem 1rem
+}
+
+.dropdown-box li {
+    font-size: inherit;
+    line-height: 1.1
+}
+
+.dir-up .dropdown-box {
+    transform: translate3d(0, 10px, 0)
+}
+
+@media (min-width: 992px) {
+    .dropdown-expanded::after {
+        content: none
+    }
+
+    .dropdown-expanded>a {
+        display: none
+    }
+
+    .dropdown-expanded .dropdown-box {
+        position: static;
+        display: flex;
+        visibility: visible;
+        opacity: 1;
+        background-color: transparent;
+        box-shadow: none;
+        border: 0;
+        padding: 9px 0;
+        transform: none;
+        color: inherit;
+        font-size: 13px;
+    }
+
+    .dropdown-expanded .dropdown-box a {
+        padding: 0
+    }
+
+    .dropdown-expanded .dropdown-box>li {
+        margin-right: 1.95rem
+    }
+
+    .dropdown-expanded .dropdown-box>li:last-child {
+        margin-right: 0
+    }
+}
+
+@media (max-width: 991px) {
+    .dropdown.dropdown-expanded li:hover>a {
+        color: #f6a800
+    }
+}
+
+.d-none {
+    display: none !important
+}
+
+@media (max-width: 480px) {
+    .header-top .header-left {
+        position: relative;
+        overflow: hidden
+    }
+
+    .welcome-msg {
+        transform: translateX(0);
+        animation: 6s linear 2s 1 show_msg_first, 12s linear 8s infinite show_msg
+    }
+}

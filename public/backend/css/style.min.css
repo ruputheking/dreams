@@ -1,0 +1,187 @@
+#library_card {
+	border: 1px solid #34495e !important;
+	width: 3.375in;
+	height: 2.125in;
+	position: relative;
+	margin: auto;
+	background: #ecf0f1 !important;
+}
+
+#library_card::after {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	opacity: 0.4;
+	top: 0;
+	background-image: url('../../../images/logo/logo.png') !important;
+	background-repeat: no-repeat !important;
+	background-size: 100px auto !important;
+	background-position: center !important;
+}
+
+
+#library_card>.card_header {
+	text-align: center;
+	margin-top: 2px;
+	color: #fff !important;
+	margin: 0;
+	padding: 5px;
+	background: #34495e !important;
+}
+
+#library_card>.card_header h5,
+#library_card>.card_header p {
+	margin: 0;
+	padding: 0;
+	color: #FFF !important;
+}
+
+#library_card>.card_header h5 {
+	font-size: 16px;
+}
+
+#library_card>.card_header p {
+	font-size: 14px;
+}
+
+#library_card>.card_footer {
+	background: #34495e !important;
+	text-align: center;
+	width: 100%;
+	height: 24px;
+	margin-top: 127px;
+	overflow: hidden;
+	color: #FFF !important;
+}
+
+#library_card>.card_footer>p {
+	font-size: 12px !important;
+	padding: 5px;
+	color: #FFF !important;
+}
+
+#library_card>.image {
+	margin-top: 10px;
+	float: left;
+	width: 40%;
+	padding-left: 10px;
+}
+
+#library_card>.image>img {
+	border-radius: 5px;
+	height: 80px;
+	border: 2px solid #34495e;
+}
+
+.library-card {
+	margin-top: 10px;
+	float: right;
+	width: 60%;
+}
+
+.library-card table {
+	width: 100%;
+}
+
+.library-card td {
+	text-align: right;
+	padding-right: 10px;
+	color: #000;
+}
+
+.library-card .lbl {
+	color: #c0392b !important;
+	font-size: 12px;
+}
+	
+/* ID Card */
+#id_card {
+	border: 1px solid #34495e !important;
+	width: 3.375in;
+	height: 2.125in;
+	position: relative;
+	margin: auto;
+	background: #ecf0f1 !important;
+}
+
+#id_card>.card_header {
+	text-align: center;
+	margin-top: 2px;
+	color: #fff !important;
+	margin: 0;
+	padding: 5px;
+	background: #34495e !important;
+}
+
+#id_card>.card_header h5,
+#id_card>.card_header p {
+	margin: 0;
+	padding: 0;
+	color: #FFF !important;
+}
+
+#id_card>.card_header h5 {
+	font-size: 16px;
+}
+
+#id_card>.card_header p {
+	font-size: 14px;
+}
+
+#id_card>.card_footer {
+	background: #34495e !important;
+	text-align: center;
+	width: 100%;
+	height: 24px;
+	margin-top: 150px;
+	overflow: hidden;
+	color: #FFF !important;
+}
+
+#id_card>.card_footer>p {
+	font-size: 12px !important;
+	padding: 5px;
+	color: #FFF !important;
+}
+
+#id_card>.image {
+	margin-top: 10px;
+	float: left;
+	width: 40%;
+	padding-left: 10px;
+}
+
+#id_card>.image>img {
+	border-radius: 5px;
+	height: 80px;
+	border: 1px solid #34495e;
+}
+
+.id-card {
+	margin-top: 7px;
+	float: right;
+	width: 60%;
+}
+
+.id-card p {
+	padding-right: 10px;
+	margin: 0;
+	font-size: 14px;
+	line-height: 17px;
+	color: #000;
+}
+
+.id-card span.lbl {
+	color: #c0392b !important;
+	font-size: 14px;
+}
+
+@media print {
+	body {-webkit-print-color-adjust: exact;}
+   .print{display:none;}
+   .data-table td:last-child {display:none;}
+   .data-table th:last-child {display:none;}
+   #library_card > .card_header{background: #34495e;}
+   .table-responsive {overflow: visible; }
+}

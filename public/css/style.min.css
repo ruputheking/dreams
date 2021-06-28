@@ -1,0 +1,11 @@
+@media only screen and (min-width:992px) {
+    .margin-topic {
+        margin-left: -50px;
+    }
+}
+
+@media only screen and (min-width:768px) {
+    .margin-topic {
+        margin-right: 50px;
+    }
+}
